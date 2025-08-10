@@ -1,0 +1,13 @@
+sidebar_title:
+  default: "About"
+
+sidebar_text:
+  default: "Short description about this community."
+
+sidebar_links_html:
+  textarea: true
+  default: |
+    <ul>
+      <li><a href="https://example.com">Website</a></li>
+      <li><a href="https://twitter.com/example">Twitter</a></li>
+    </ul>

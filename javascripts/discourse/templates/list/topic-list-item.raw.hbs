@@ -1,0 +1,49 @@
+<tr>
+  <td colspan="100">TEST CARD {{topic.id}}</td>
+</tr>
+<tr class="topic-card">
+  <td class="topic-card__cell" colspan="100">
+    <article class="ph-card">
+      <header class="ph-card__header">
+        <h3 class="ph-card__title">
+          <a href="{{topic.url}}">{{topic.fancy_title}}</a>
+        </h3>
+      </header>
+
+      {{#if topic.excerpt}}
+      <div class="ph-card__desc">
+        {{{topic.excerpt}}}
+      </div>
+      {{/if}}
+
+      <div class="ph-card__meta">
+        {{#if topic.category}}
+        <span class="ph-meta__category">
+          <a href="{{topic.category.url}}">{{topic.category.name}}</a>
+        </span>
+        {{/if}}
+
+        {{#if topic.created_by}}
+        <span class="ph-meta__dot">•</span>
+        <span class="ph-meta__author">{{topic.created_by.username}}</span>
+        {{/if}}
+
+        <span class="ph-meta__dot">•</span>
+        <time class="ph-meta__date">
+          {{format-date topic.created_at format="medium-with-ago"}}
+        </time>
+      </div>
+
+      <footer class="ph-card__footer">
+        <a class="ph-btn ph-btn--primary" href="{{topic.url}}">Open</a>
+        <a class="ph-btn ph-btn--ghost" href="{{topic.url}}#reply">Discuss</a>
+        <div class="ph-spacer"></div>
+        <div class="ph-stats">
+          {{#if topic.like_count}}<span class="ph-stat">❤️ {{topic.like_count}}</span>{{/if}}
+          <span class="ph-stat">💬 {{topic.posts_count}}</span>
+          {{#if topic.views}}<span class="ph-stat">👁️ {{topic.views}}</span>{{/if}}
+        </div>
+      </footer>
+    </article>
+  </td>
+</tr>

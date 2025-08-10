@@ -6,19 +6,15 @@
       </header>
 
       {{#if topic.excerpt}}
-        <div class="ph-card__desc">{{{topic.excerpt}}}</div>
+      <div class="ph-card__desc">{{{topic.excerpt}}}</div>
       {{/if}}
 
       <div class="ph-card__meta">
         {{#if topic.category}}
-          <span class="ph-meta__category"><a href="{{topic.category.url}}">{{topic.category.name}}</a></span>
+        <span class="ph-meta__category"><a href="{{topic.category.url}}">{{topic.category.name}}</a></span>
         {{/if}}
-
-        {{#if topic.created_by}}
-          <span class="ph-meta__dot">•</span>
-          <span class="ph-meta__author">{{topic.created_by.username}}</span>
-        {{/if}}
-
+        {{#if topic.created_by}}<span class="ph-meta__dot">•</span><span
+          class="ph-meta__author">{{topic.created_by.username}}</span>{{/if}}
         <span class="ph-meta__dot">•</span>
         <time class="ph-meta__date">{{format-date topic.created_at format="medium-with-ago"}}</time>
       </div>
